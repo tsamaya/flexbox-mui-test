@@ -8,9 +8,14 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Paper } from '@material-ui/core';
 
+import CompanyType from './steps/CompanyType';
+import CompanyDetails from './steps/CompanyDetails';
+import ManagerDetails from './steps/ManagerDetails';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    border: 1,
   },
   backButton: {
     marginRight: theme.spacing(1),
@@ -24,20 +29,23 @@ const useStyles = makeStyles((theme) => ({
 
 const getSteps = () => {
   return [
-    'Select master blaster campaign settings',
-    'Create an ad group',
-    'Create an ad',
+    'Select company type',
+    'Comapny details',
+    'Manager details',
+    'Review',
   ];
 };
 
 const getStepContent = (stepIndex) => {
   switch (stepIndex) {
     case 0:
-      return 'Select campaign settings...';
+      return <CompanyType />;
     case 1:
-      return 'What is an ad group anyways?';
+      return <CompanyDetails />;
     case 2:
-      return 'This is the bit I really care about!';
+      return <ManagerDetails />;
+    case 3:
+      return "All good, let's check your inputs";
     default:
       return 'Unknown stepIndex';
   }

@@ -10,8 +10,8 @@ import Form from './components/Form';
 import theme from './theme';
 
 const renderApp = () => (
-  <Container maxWidth="sm">
-    <Box my={4}>
+  <Container maxWidth="md">
+    <Box my={4} width={1}>
       <Typography variant="h4" component="h1" gutterBottom>
         Flexbox test
       </Typography>
